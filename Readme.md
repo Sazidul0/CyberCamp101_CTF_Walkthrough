@@ -7,7 +7,7 @@ Presented by **IIUC Cyber Security Club**
 - [Web Challenge 2: About the About Page](#challenge-2-about-the-about-page-100-points)
 - [Web Challenge 3: Owner Access](#challenge-3-owner-access-200-points)
 - [Web Challenge 4: Greet the Site](#challenge-4-greet-the-site-400-points)
-
+- [Steganography Challenge 1: Ro0tKnoght](#challenge-1-ro0tknoght-50-points)
 ---
 
 ## Challenge 1: Hidden on the Homepage (50 Points)
@@ -215,5 +215,30 @@ By completing these challenges, you will understand:
 - Regularly audit your code for security vulnerabilities
 
 ---
+
+## Challenge 1: Ro0tKnoght (50 Points)
+
+### 📋 Challenge Description
+The following string of text has been provided with no further explanation : 
+Jrypbzr gb PlorePnzc434'f PGS rirag! Urer vf lbhe synt E3gq_g3qe_Ce3oy6z. Whfg cynpr vg orgjrra gjb pheyl oenpxref naq glcr PlorePnzc orsber vg gb trg lbhe synt. Tbbq yhpx!
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Put the string of text in a cypher detector/guesser.
+- The text resembles a shift cypher such as Caesar's Cypher or ROTx.
+- This can be confirmed using a cypher detecter/guesser such as [dcode.fr](https://www.dcode.fr/identification-chiffrement)
+
+**Step 2:** Use an online decoder for the descovered cypher
+- Use a decoder for either ROT13 or Caesar's Cypher with a shift key of 13 to retrieve the decrypted text.
+
+**Step 3:** Retrieve the flag
+- The flag is with in the decrypted text.
+- Flag : CyberCamp{R3td_t3dr_Pr3bl6m}
+
+## 🎓 Learning Outcomes
+
+This challenge is ment to teach:
+1. The use of online Cypher Detect tools to detect the type of cypher.
+2. The use of online decoders.
 
 **Good luck with the challenges! Happy hacking! 🚀**
