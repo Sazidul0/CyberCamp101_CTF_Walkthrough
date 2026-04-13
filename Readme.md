@@ -7,7 +7,16 @@ Presented by **IIUC Cyber Security Club**
 - [Web Challenge 2: About the About Page](#challenge-2-about-the-about-page-100-points)
 - [Web Challenge 3: Owner Access](#challenge-3-owner-access-200-points)
 - [Web Challenge 4: Greet the Site](#challenge-4-greet-the-site-400-points)
-- [Steganography Challenge 1: Ro0tKnoght](#challenge-1-ro0tknoght-50-points)
+- [Cryptography Challenge 1: Ro0tKnoght](#challenge-1-ro0tknoght-50-points)
+- [Cryptography Challenge 2: Dehashed (50 Points)](#challenge-2-dehashed-50-points)
+- [Cryptography Challenge 3: Hashed (150 Points)](#challenge-3-hashed-150-points)
+- [Cryptography Challenge 4: Layered Illusion (250 Points)](#challenge-4-layered-illusion-250-points)
+- [Cryptography Challenge 5: The Forgotten Cipher Key (250 Points)](#challenge-5-the-forgotten-cipher-key-250-points)
+- [Cryptography Challenge 6: Broken Locks of RSA (350 Points)](#challenge-6-broken-locks-of-rsa-350-points)
+- [Steganography Challenge 7: Hidden in Plain Sight (200 Points)](#challenge-7-hidden-in-plain-sight-200-points)
+- [Steganography Challenge 8: Structured Secrets (200 Points)](#challenge-8-structured-secrets-200-points)
+- [Steganography Challenge 9: Visual Frequency (300 Points)](#challenge-9-visual-frequency-300-points)
+- [Steganography Challenge 10: Just Can't Prove It! (300 Points)](#challenge-10-just-cant-prove-it-300-points)
 ---
 
 ## Challenge 1: Hidden on the Homepage (50 Points)
@@ -240,5 +249,320 @@ Jrypbzr gb PlorePnzc434'f PGS rirag! Urer vf lbhe synt E3gq_g3qe_Ce3oy6z. Whfg c
 This challenge is ment to teach:
 1. The use of online Cypher Detect tools to detect the type of cypher.
 2. The use of online decoders.
+
+---
+
+## Challenge 2: Dehashed (50 Points)
+
+### 📋 Challenge Description
+
+Find the hash type and try to dehash it.
+
+    240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9
+
+Flag format: CyberCamp{dehashed_value}
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Identify the hash type\
+- The hash length is 64 hex characters, which strongly indicates
+SHA-256.
+
+**Step 2:** Use an online hash database / cracker\
+- Use tools like CrackStation or similar hash lookup services.\
+- Paste the hash and check if it exists in known databases.
+
+**Step 3:** Retrieve the plaintext\
+- If found, extract the original value.
+
+**Step 4:** Format the flag\
+- CyberCamp{plaintext}
+
+### 🎓 Learning Outcomes
+
+1.  Identifying hash types using length and format\
+2.  Using online hash cracking databases\
+3.  Understanding weak/reused passwords
+
+------------------------------------------------------------------------
+
+## Challenge 3: Hashed (150 Points)
+
+### 📋 Challenge Description
+
+A user's password was leaked. Crack the hash and submit it.
+
+    4f6cc8e6be58c426b9e9bf3704b0d2ed1e56bebaac8b503344325a31fc42bbcc
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Identify the hash type\
+- 64 hex characters → likely SHA-256
+
+**Step 2:** Attempt database lookup\
+- Try CrackStation or similar tools first
+
+**Step 3:** Use brute-force/dictionary attack\
+- If not found: - Use tools like hashcat or John the Ripper\
+- Try common wordlists (e.g., rockyou.txt)
+
+**Step 4:** Retrieve the password\
+- Extract the cracked password
+
+**Step 5:** Format the flag\
+- CyberCamp{password}
+
+### 🎓 Learning Outcomes
+
+1.  Difference between lookup vs cracking\
+2.  Dictionary attacks on hashes\
+3.  Importance of strong passwords
+
+------------------------------------------------------------------------
+
+## Challenge 4: Layered Illusion (250 Points)
+
+### 📋 Challenge Description
+
+The flag has been encrypted in a 3-stage process.
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Identify the first encoding\
+- The string ends with = → indicates Base64
+
+**Step 2:** Decode Base64\
+- This reveals a sequence of numbers separated by spaces
+
+**Step 3:** Identify second layer\
+- Notice that the numbers are seperated by space and are 8 characters long.
+- Furthermore, the whole number sequence uses only 2 numbers, 3 and 4.
+- Use these indicators to critically analyze that these are binary numbers with a rotation applied to it, specifically 3.
+- Therefore, we can deduce that that ROT3 was used to encrypt it, so to decrypte it, apply ROT7 to get the binary sequence.
+
+**Step 4:** Identify third layer\
+- The final string contains 1s and 0s in an 8 digit combination seperated by space, which is a representaion of binary encoding.
+
+**Step 5:** Decode final layer\
+- Use a binary decoder to obtain the final flag.
+
+### 🎓 Learning Outcomes
+
+1.  Recognizing Base64 patterns\
+2.  Thinking critically cannot be overlooked, tools isn't always applicable\
+3.  Multi-layer decoding techniques\
+4.  Systematic approach to layered encryption
+
+------------------------------------------------------------------------
+
+## Challenge 5: The Forgotten Cipher Key (250 Points)
+
+### 📋 Challenge Description
+
+AES-256 encrypted message. The key itself is encrypted.
+
+    -.-. -.-- -... . .-. .---- ----- .----
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Identify key encoding\
+- The format indicates Morse Code
+
+**Step 2:** Decode Morse Code\
+- Convert to text → reveals the AES key
+
+**Step 3:** Analyze encrypted file\
+- Salted\_\_ prefix → indicates OpenSSL AES encryption (CBC)
+
+**Step 4:** Decrypt the file\
+- Use OpenSSL or CyberChef: - Algorithm: AES-256-CBC\
+- Input: secret.enc\
+- Key: decoded value
+
+**Step 5:** Retrieve flag\
+- Extract plaintext and format flag
+
+### 🎓 Learning Outcomes
+
+1.  Identifying Morse code\
+2.  AES encryption basics (CBC mode)\
+3.  File-based cryptography handling
+
+------------------------------------------------------------------------
+
+## Challenge 6: Broken Locks of RSA (350 Points)
+
+### 📋 Challenge Description
+
+Public Key:\
+n = 3233\
+e = 17
+
+Ciphertext:\
+c = 855
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Factorize n\
+- 3233 = 61 × 53
+
+**Step 2:** Compute φ(n)\
+- φ(n) = (61−1)(53−1) = 60 × 52 = 3120
+
+**Step 3:** Compute private key d\
+- Find modular inverse of e mod φ(n)\
+- d = 2753
+
+**Step 4:** Decrypt ciphertext\
+- m = c\^d mod n\
+- m = 855\^2753 mod 3233
+
+**Step 5:** Retrieve message\
+- Result is the plaintext integer
+
+**Step 6:** Format flag\
+- CyberCamp{m}
+
+### 🎓 Learning Outcomes
+
+1.  RSA fundamentals\
+2.  Weak key vulnerability (small n)\
+3.  Modular arithmetic in cryptography
+
+------------------------------------------------------------------------
+
+## Challenge 7: Hidden in Plain Sight (200 Points)
+
+### 📋 Challenge Description
+
+Find the hidden flag inside the image.
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Inspect the image\
+- Open normally → nothing obvious
+
+**Step 2:** Check metadata\
+- Use tools like exiftool
+
+**Step 3:** Look for hidden data\
+- Use: - strings SleepyTiger.jpg\
+- binwalk\
+- steghide
+
+**Step 4:** Extract hidden content\
+- Steganography tools may reveal embedded data
+
+**Step 5:** Retrieve flag\
+- Look for CyberCamp{...}
+
+### 🎓 Learning Outcomes
+
+1.  Steganography basics\
+2.  Metadata analysis\
+3.  File inspection tools
+
+------------------------------------------------------------------------
+
+## Challenge 8: Structured Secrets (200 Points)
+
+### 📋 Challenge Description
+
+A normal log file hides a secret.
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Analyze structure\
+- Each line begins with a capital letter
+
+**Step 2:** Extract pattern\
+- Take the first letter of each line
+
+**Step 3:** Construct the string\
+- Combine letters sequentially
+
+**Step 4:** Interpret result\
+- The letters form a hidden word/string
+
+**Step 5:** Format flag\
+- CyberCamp{hidden_string}
+
+### 🎓 Learning Outcomes
+
+1.  Pattern recognition\
+2.  Acrostics and structured encoding\
+3.  Thinking beyond encryption
+
+------------------------------------------------------------------------
+
+## Challenge 9: Visual Frequency (300 Points)
+
+### 📋 Challenge Description
+
+The audio contains a hidden visual message.
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Analyze the hint\
+- "Not meant to hear... meant to see" → spectrogram
+
+**Step 2:** Use spectrogram tools\
+- Tools: - Audacity\
+- Sonic Visualiser
+
+**Step 3:** Load audio file\
+- Switch to spectrogram view
+
+**Step 4:** Observe hidden pattern\
+- Text/image appears in frequency domain
+
+**Step 5:** Extract message\
+- Read the visible text
+
+**Step 6:** Format flag\
+- CyberCamp{message}
+
+### 🎓 Learning Outcomes
+
+1.  Spectrogram analysis\
+2.  Audio steganography\
+3.  Multi-domain thinking
+
+------------------------------------------------------------------------
+
+## Challenge 10: Just Can't Prove It! (300 Points)
+
+### 📋 Challenge Description
+
+Find hidden proof inside an image.
+
+### 🔍 Step-by-Step Walkthrough
+
+**Step 1:** Initial inspection\
+- Image appears normal
+
+**Step 2:** Check metadata\
+- Use exiftool Doakes.jpg
+
+**Step 3:** Search embedded data\
+- Use: - binwalk\
+- strings
+
+**Step 4:** Try steganography tools\
+- steghide extract (may require password)
+
+**Step 5:** Look for anomalies\
+- Hidden files, appended data, or unusual headers
+
+**Step 6:** Retrieve proof\
+- Extract hidden content
+
+### 🎓 Learning Outcomes
+
+1.  Digital forensics basics\
+2.  Image steganography\
+3.  Investigative workflow
+
+---
 
 **Good luck with the challenges! Happy hacking! 🚀**
