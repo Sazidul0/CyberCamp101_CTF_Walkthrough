@@ -14,7 +14,7 @@ Presented by **IIUC Cyber Security Club**
 - [Cryptography Challenge 5: The Forgotten Cipher Key (250 Points)](#challenge-5-the-forgotten-cipher-key-250-points)
 - [Cryptography Challenge 6: Broken Locks of RSA (350 Points)](#challenge-6-broken-locks-of-rsa-350-points)
 - [Steganography Challenge 7: Hidden in Plain Sight (200 Points)](#challenge-7-hidden-in-plain-sight-200-points)
-- [Steganography Challenge 8: Structured Secrets (200 Points)](#challenge-8-structured-secrets-200-points)
+- [Steganography Challenge 8: The lost Deployment Note (150 Points)](#challenge-8-the-lost-deployment-note-150-points)
 - [Steganography Challenge 9: Visual Frequency (300 Points)](#challenge-9-visual-frequency-300-points)
 - [Steganography Challenge 10: Just Can't Prove It! (300 Points)](#challenge-10-just-cant-prove-it-300-points)
 ---
@@ -464,7 +464,7 @@ Find the hidden flag inside the image.
 
 ------------------------------------------------------------------------
 
-## Challenge 8: Structured Secrets (200 Points)
+## Challenge 8: The Lost Deployment Note (150 Points)
 
 ### 📋 Challenge Description
 
