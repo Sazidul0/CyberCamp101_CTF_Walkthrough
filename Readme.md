@@ -12,11 +12,11 @@ Presented by **IIUC Cyber Security Club**
 - [Cryptography Challenge 3: Hashed (150 Points)](#challenge-3-hashed-150-points)
 - [Cryptography Challenge 4: Layered Illusion (250 Points)](#challenge-4-layered-illusion-250-points)
 - [Cryptography Challenge 5: The Forgotten Cipher Key (250 Points)](#challenge-5-the-forgotten-cipher-key-250-points)
-- [Cryptography Challenge 6: Broken Locks of RSA (350 Points)](#challenge-6-broken-locks-of-rsa-350-points)
-- [Steganography Challenge 7: Hidden in Plain Sight (200 Points)](#challenge-7-hidden-in-plain-sight-200-points)
-- [Steganography Challenge 8: The lost Deployment Note (150 Points)](#challenge-8-the-lost-deployment-note-150-points)
-- [Steganography Challenge 9: Visual Frequency (300 Points)](#challenge-9-visual-frequency-300-points)
-- [Steganography Challenge 10: Just Can't Prove It! (300 Points)](#challenge-10-just-cant-prove-it-300-points)
+- [Cryptography Challenge 7: Broken Locks of RSA (350 Points)](#challenge-7-broken-locks-of-rsa-350-points)
+- [Steganography Challenge 1: Hidden in Plain Sight (200 Points)](#challenge-1-hidden-in-plain-sight-200-points)
+- [Steganography Challenge 2: The lost Deployment Note (150 Points)](#challenge-2-the-lost-deployment-note-150-points)
+- [Steganography Challenge 3: Visual Frequency (300 Points)](#challenge-3-visual-frequency-300-points)
+- [Steganography Challenge 4: Just Can't Prove It! (300 Points)](#challenge-4-just-cant-prove-it-300-points)
 ---
 
 ## Challenge 1: Hidden on the Homepage (50 Points)
@@ -390,7 +390,7 @@ AES-256 encrypted message. The key itself is encrypted.
 
 ------------------------------------------------------------------------
 
-## Challenge 6: Broken Locks of RSA (350 Points)
+## Challenge 7: Broken Locks of RSA (350 Points)
 
 ### 📋 Challenge Description
 
@@ -431,7 +431,7 @@ c = 855
 
 ------------------------------------------------------------------------
 
-## Challenge 7: Hidden in Plain Sight (200 Points)
+## Challenge 1: Hidden in Plain Sight (200 Points)
 
 ### 📋 Challenge Description
 
@@ -464,7 +464,7 @@ Find the hidden flag inside the image.
 
 ------------------------------------------------------------------------
 
-## Challenge 8: The Lost Deployment Note (150 Points)
+## Challenge 2: The Lost Deployment Note (150 Points)
 
 ### 📋 Challenge Description
 
@@ -495,7 +495,7 @@ A normal log file hides a secret.
 
 ------------------------------------------------------------------------
 
-## Challenge 9: Visual Frequency (300 Points)
+## Challenge 3: Visual Frequency (300 Points)
 
 ### 📋 Challenge Description
 
@@ -530,7 +530,7 @@ The audio contains a hidden visual message.
 
 ------------------------------------------------------------------------
 
-## Challenge 10: Just Can't Prove It! (300 Points)
+## Challenge 4: Just Can't Prove It! (300 Points)
 
 ### 📋 Challenge Description
 
